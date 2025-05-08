@@ -1,0 +1,268 @@
+:root {
+  --primary-color: #cc0000;
+  --secondary-color: #000000;
+  --accent-color: #f5f5f5;
+  --text-color: #333333;
+  --link-color: #cc0000;
+  --link-hover: #990000;
+  --light-border: #eeeeee;
+  --transition-speed: 0.3s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  color: var(--text-color);
+  line-height: 1.6;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  position: relative;
+}
+
+.navLinks {
+  display: flex;
+  gap: 30px;
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 600;
+  padding: 5px 0;
+  position: relative;
+  transition: color var(--transition-speed);
+}
+
+.navLinks a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--primary-color);
+  transition: width var(--transition-speed);
+}
+
+.navLinks a:hover:after,
+.navLinks a.active:after {
+  width: 100%;
+}
+
+.navLinks a.active {
+  color: var(--primary-color);
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--text-color);
+  transition: color var(--transition-speed);
+}
+
+/* Profile Section */
+.profileSection {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--light-border);
+}
+
+.profilePhoto {
+  width: 200px;
+  height: auto;
+  border-radius: 15px;
+  object-fit: contain;
+  border: 4px solid var(--primary-color);
+  transition: border-color var(--transition-speed);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contactInfo h1 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+}
+
+.contactInfo h2 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.contactInfo h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 15px;
+  color: var(--secondary-color);
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px 15px;
+  align-items: center;
+}
+
+.contactGrid a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+.contactGrid a:hover {
+  color: var(--link-hover);
+}
+
+/* Content Container */
+.contentContainer {
+  padding: 40px 0;
+}
+
+.mainContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+.mainContent h3 {
+  color: var(--primary-color);
+  margin: 25px 0 15px 0;
+  font-size: 1.4rem;
+  border-bottom: 2px solid var(--light-border);
+  padding-bottom: 8px;
+}
+
+.mainContent p {
+  margin-bottom: 16px;
+}
+
+.mainContent a {
+  color: var(--link-color);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+.mainContent a:hover {
+  color: var(--link-hover);
+}
+
+.mainContent ul {
+  list-style-position: inside;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
+
+.mainContent li {
+  margin-bottom: 6px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px 0;
+  color: #777;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--light-border);
+  margin-top: 40px;
+}
+
+footer .copyright {
+  margin-top: 8px;
+  font-size: 0.8rem;
+}
+
+footer a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--link-hover);
+}
+
+/* Dark Mode */
+body.dark-mode {
+  --text-color: #f5f5f5;
+  --link-color: #ff6666;
+  --link-hover: #ff8080;
+  --accent-color: #333333;
+  --light-border: #333333;
+  background-color: #121212;
+}
+
+body.dark-mode .contactInfo h3 {
+  color: #dddddd;
+}
+
+body.dark-mode .theme-toggle {
+  color: #f5f5f5;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .profileSection {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .contentContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .navLinks {
+    gap: 15px;
+  }
+  
+  .contactInfo h1 {
+    font-size: 2rem;
+  }
+  
+  .contactGrid {
+    justify-content: center;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    padding: 0;
+    color: black;
+  }
+  
+  .theme-toggle, 
+  footer .copyright {
+    display: none;
+  }
+  
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .profilePhoto {
+    max-width: 150px;
+  }
+}

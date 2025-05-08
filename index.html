@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>James Kemper | Economics | Texas Tech University</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Add favicon -->
+  <link rel="icon" type="image/png" href="Assets/images/favicon.png">
+  <!-- Add meta description for better SEO -->
+  <meta name="description" content="James Kemper, Lecturer in the Department of Economics at Texas Tech University, specializing in sports economics, education economics, and health economics.">
+</head>
+<body>
+  <nav>
+    <div class="navLinks">
+      <a href="/" class="active">Home</a>
+      <a href="teaching.html">Teaching</a>
+      <a href="James_Kemper_CV.pdf">CV</a>
+      <a href="projects.html">Projects</a>
+    </div>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+      <!-- Light/Dark mode icon will be injected by JS -->
+    </button>
+  </nav>
+
+  <!-- Profile Section -->
+  <section class="profileSection">
+    <img class="profilePhoto" src="Assets/images/head_shot_full.png" alt="James Kemper" />
+    <div class="contactInfo">
+      <h1>James Kemper</h1>
+      <h2>Lecturer, Department of Economics</h2>
+      <h3>Texas Tech University</h3>
+      <div class="contactGrid">
+        <p><strong>Phone:</strong></p>
+        <p>(806) 834-7691</p>
+        <p><strong>Email:</strong></p>
+        <p><a href="mailto:james.kemper@ttu.edu">james.kemper@ttu.edu</a></p>
+        <p><strong>Office:</strong></p>
+        <p>243 Holden Hall</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="contentContainer">
+    <div class="mainContent">
+      <section class="welcomeSection">
+        <p>I am a Lecturer in the <a href="https://www.depts.ttu.edu/economics/">Department of Economics</a> at <a href="https://www.ttu.edu/">Texas Tech University</a>. My research focuses on the intersection between sports and economics.</p>
+        <p>Beyond teaching, I supervise a team of graduate instructors and teaching assistants, leading weekly workshops on enhancing teaching effectiveness. I also serve as an adjunct instructor at the Texas Tech University Health Sciences Center, teaching courses in health economics.</p>
+        <p>Wreck 'Em!</p>
+      </section>
+
+      <section>
+        <h3>Education</h3>
+        <ul>
+          <li>M.S. in Finance; M.S. in Economics, West Texas A&M University, 2011</li>
+          <li>B.B.A. in Management, West Texas A&M University, 2006</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Research Fields</h3>
+        <ul>
+          <li>Sports Economics</li>
+          <li>Education Economics</li>
+          <li>Health Economics</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+
+  <footer>
+    <p>Updated May 2025</p>
+    <p class="copyright">© 2025 James Kemper | Built with <a href="https://pages.github.com/">GitHub Pages</a></p>
+  </footer>
+
+  <script>
+    // Check for saved theme preference or prefer-color-scheme
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    
+    // Check localStorage first, then system preference
+    if (localStorage.getItem('darkMode') === 'true') {
+      body.classList.add('dark-mode');
+      updateToggleIcon(true);
+    } else if (localStorage.getItem('darkMode') === 'false') {
+      updateToggleIcon(false);
+    } else {
+      // No stored preference, use system preference
+      if (prefersDarkScheme.matches) {
+        body.classList.add('dark-mode');
+        updateToggleIcon(true);
+      } else {
+        updateToggleIcon(false);
+      }
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const isDarkMode = body.classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', isDarkMode);
+      updateToggleIcon(isDarkMode);
+    });
+
+    function updateToggleIcon(isDarkMode) {
+      themeToggle.innerHTML = isDarkMode
+        ? '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>'
+        : '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>';
+    }
+  </script>
+</body>
+</html>
