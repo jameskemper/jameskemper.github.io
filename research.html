@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>James Kemper | Research & Projects | Texas Tech University</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav>
+    <div class="navLinks">
+      <a href="/">Home</a>
+      <a href="James_Kemper_CV.pdf">CV</a>
+      <a href="research.html" class="active">Research & Projects</a>
+    </div>
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+      <!-- Light/Dark mode icon will be injected by JS -->
+    </button>
+  </nav>
+
+  <!-- Research Section -->
+  <div class="mainContent">
+    <h2>Research & Projects</h2>
+      
+    <section class="researchProject">
+      <h3>Leveling the Field: How NIL Has Reshaped Transfers, Performance, and Parity in College Football (working paper)</h3>
+      <p>Since the NCAA allowed athletes to profit from their Name, Image, and Likeness (NIL) in 2021, our research team has been examining the effects across Power 5 ("Haves") and non-Power 5 ("Have-Nots") programs. Contrary to many initial concerns about NIL worsening competitive imbalance, our data demonstrates that NIL has enhanced competitive balance and improved player performance, especially in "Have-Nots" teams.</p>
+        
+      <p>Our methodology employs a difference-in-differences (DiD) approach comparing player performance metrics before and after NIL implementation across both conference tiers. We've constructed a comprehensive dataset (2015-2024) containing player-level statistics, transfer patterns, and game outcomes.</p>
+        
+      <h4>Key Findings</h4>
+      <ul>
+        <li>Transfers increased substantially across all conferences, with a surprising distribution pattern that didn't solely benefit traditional powerhouses</li>
+        <li>Player performance metrics improved in the NIL era, with Have-Not players seeing the greatest performance improvements</li>
+        <li>Games have become more competitive during the NIL period, with tighter point spreads and fewer blowouts</li>
+        <li>Using the Noll-Scully Index, we've demonstrated increased competitive parity in most conferences</li>
+      </ul>
+      
+      <p>This research was presented at the 2nd Annual Sports Economics Conference, hosted by the University of Maryland, Baltimore County in April 2025. The project is a collaboration with Dr. Alejandro Abarca, Jurrien Loftin, and Caleb Vinson from the Department of Economics at Texas Tech University.</p>
+      
+    </section>
+    
+    <section class="researchProject">
+      <h3>TrUE Scholars Program Faculty Mentor</h3>
+      <p>As a faculty mentor for Texas Tech's Undergraduate Research Experience (TrUE) Scholars Program, I work closely with talented undergraduates to develop their research skills and academic potential. Each student identifies a research topic, designs appropriate methodologies, collects and analyzes data, and presents their findings at the annual Texas Tech University Undergraduate Research Conference (URC).</p>
+ 
+      <p>Working with these promising researchers has been tremendously rewarding. The URC presentations showcase not just their individual accomplishments but also highlight the value of undergraduate research in developing critical thinking and analytical capabilities that extend well beyond the classroom.</p>
+      
+      <h4>2025 TrUE Scholars Research</h4>
+      <ul>
+        <li><strong><a href="https://www.depts.ttu.edu/true/urc/2025/directory/abstract.php?id=C283283">Jenna Necaise</a></strong> – "Aging America: The Intersection of Healthcare Costs and Telehealth Adoption" – Jenna's research looks at the growing elderly population in West Texas and explores the economic challenges of accessing healthcare in rural communities.</li>
+        <li><strong><a href="https://www.depts.ttu.edu/true/urc/2025/directory/abstract.php?id=A014014">Affan Anas</a></strong> – "Parking Predicament: A Microeconomic Analysis of Tech's Parking Shortage" – Affan's work analyzed how TTU's parking permits are oversold and used game theory to understand student decision-making when faced with limited parking.</li>
+        <li><strong><a href="https://www.depts.ttu.edu/true/urc/2025/directory/abstract.php?id=B134134">Joseph Garcia</a></strong> – "Economic Tourism in Japan: The Dual Impact of Tokyo 2020 and COVID-19" – Joseph examined how the pandemic affected Japan's Olympic tourism plans and the country's economic resilience strategies.</li>
+      </ul>
+    </section>
+    
+    <section class="researchProject">
+      <h3>NCAA Basketball Game Outcome Prediction Model</h3>
+      <p>The <a href="https://www.myweb.ttu.edu/jkemper/about_NCAA_odds.html">WRECKEM Model</a>, named in honor of Texas Tech University, is a predictive analytics system that forecasts outcomes of NCAA Men's Basketball games. The 2025 version of the model uses machine learning and historical performance metrics to generate accurate game predictions.</p>
+    </section>
+  </div>
+
+  <footer>
+    <p>Updated May 2025</p>
+  </footer>
+
+  <script>
+    // Check for saved theme preference
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    
+    // Only apply dark mode if explicitly saved
+    if (localStorage.getItem('darkMode') === 'true') {
+      body.classList.add('dark-mode');
+      updateToggleIcon(true);
+    } else {
+      // Default to light mode
+      localStorage.setItem('darkMode', 'false');
+      updateToggleIcon(false);
+    }
+
+    themeToggle.addEventListener('click', () => {
+      const isDarkMode = body.classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', isDarkMode);
+      updateToggleIcon(isDarkMode);
+    });
+
+    function updateToggleIcon(isDarkMode) {
+      themeToggle.innerHTML = isDarkMode
+        ? '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>'
+        : '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>';
+    }
+  </script>
+</body>
+</html>

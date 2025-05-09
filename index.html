@@ -5,21 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>James Kemper | Economics | Texas Tech University</title>
   <link rel="stylesheet" href="styles.css">
-  <!-- Add favicon -->
   <link rel="icon" type="image/png" href="Assets/images/favicon.png">
-  <!-- Add meta description for better SEO -->
   <meta name="description" content="James Kemper, Lecturer in the Department of Economics at Texas Tech University, specializing in sports economics, education economics, and health economics.">
 </head>
 <body>
   <nav>
     <div class="navLinks">
       <a href="/" class="active">Home</a>
-      <a href="#teaching">Teaching</a>
       <a href="James_Kemper_CV.pdf">CV</a>
       <a href="research.html">Research & Projects</a>
     </div>
     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-      <!-- Light/Dark mode icon will be injected by JS -->
     </button>
   </nav>
 
@@ -88,29 +84,22 @@
   </div>
 
   <footer>
-    <p>Updated May 2025</p> 
+    <p>Updated May 2025</p>
   </footer>
 
   <script>
-    // Check for saved theme preference or prefer-color-scheme
-    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+    // Check for saved theme preference
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
     
-    // Check localStorage first, then system preference
+    // Only apply dark mode if explicitly saved
     if (localStorage.getItem('darkMode') === 'true') {
       body.classList.add('dark-mode');
       updateToggleIcon(true);
-    } else if (localStorage.getItem('darkMode') === 'false') {
-      updateToggleIcon(false);
     } else {
-      // No stored preference, use system preference
-      if (prefersDarkScheme.matches) {
-        body.classList.add('dark-mode');
-        updateToggleIcon(true);
-      } else {
-        updateToggleIcon(false);
-      }
+      // Default to light mode
+      localStorage.setItem('darkMode', 'false');
+      updateToggleIcon(false);
     }
 
     themeToggle.addEventListener('click', () => {
